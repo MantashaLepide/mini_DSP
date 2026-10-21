@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import type { FormEvent } from 'react';
 import { useEffect, useState } from 'react';
+import { BrandLogo } from '../../components/brand-logo.tsx';
 import { LpCard, LpMessage } from '../../components/lepidus-ui.tsx';
 import { ClientApiError, fetchSession, signIn } from '../../lib/client-api.ts';
 
@@ -57,6 +58,9 @@ export default function LoginPage() {
   return (
     <main className="login-page">
       <div className="login-page__card">
+        <div className="login-page__logo">
+          <BrandLogo />
+        </div>
         <LpCard title="Sign in to MiniDSP" elevated>
           <form className="form-stack" onSubmit={handleSubmit} noValidate>
             {error ? (

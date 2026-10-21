@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
+import { BrandLogo } from './brand-logo.tsx';
 import { useLepidusRoot } from './lepidus.tsx';
 import { LpMessage } from './lepidus-ui.tsx';
 import { fetchSession, signOut } from '../lib/client-api.ts';
@@ -95,7 +96,10 @@ export function AppShell({ children }: { children: ReactNode }) {
       </nav>
       <div className="app-shell__content">
         <header className="app-shell__topbar">
-          <span className="app-shell__product">MiniDSP</span>
+          <span className="app-shell__product">
+            <BrandLogo size="sm" />
+            MiniDSP
+          </span>
           <button type="button" className="lp-button lp-button--secondary lp-button--sm" onClick={handleSignOut}>
             Sign out
           </button>
